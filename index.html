@@ -1,0 +1,463 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Ly ♡ Happy 20.10</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
+    overflow-x: hidden;
+    font-family: "Segoe UI", sans-serif;
+    background:
+        radial-gradient(circle at 10% 15%, #ffd0e1, transparent 35%),
+        radial-gradient(circle at 90% 85%, #e8c4fa, transparent 35%),
+        linear-gradient(135deg, #fff3f7, #fbc2eb, #fff0f5);
+    color: #754456;
+}
+
+.glow {
+    position: fixed;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: .45;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glow-one {
+    background: #ff80ab;
+    top: -80px;
+    left: -80px;
+}
+
+.glow-two {
+    background: #ce93d8;
+    bottom: -80px;
+    right: -80px;
+}
+
+/* HOA BAY */
+
+.floating {
+    position: fixed;
+    bottom: -60px;
+    font-size: 25px;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0;
+    animation: floatUp 10s linear infinite;
+}
+
+.floating:nth-of-type(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.floating:nth-of-type(2) {
+    left: 25%;
+    animation-delay: 3s;
+}
+
+.floating:nth-of-type(3) {
+    left: 75%;
+    animation-delay: 1s;
+}
+
+.floating:nth-of-type(4) {
+    left: 90%;
+    animation-delay: 5s;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    10% { opacity: .8; }
+    90% { opacity: .8; }
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+/* THIỆP */
+
+.card {
+    position: relative;
+    z-index: 1;
+    width: min(100%, 540px);
+    padding: 42px 32px;
+    text-align: center;
+    border: 1px solid #ffffffd9;
+    border-radius: 30px;
+    background: #ffffff85;
+    box-shadow: 0 25px 75px #a7447025;
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    animation: appear 1s ease both;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(.97);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.top-label {
+    display: inline-block;
+    padding: 9px 16px;
+    border: 1px solid #f0bdd0;
+    border-radius: 30px;
+    background: #fff9fb;
+    color: #b34a73;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.decor {
+    margin: 23px 0 8px;
+    font-size: 40px;
+    animation: sway 3s ease-in-out infinite;
+}
+
+@keyframes sway {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+h1 {
+    color: #bd3868;
+    font: 600 clamp(36px, 8vw, 49px)/1.2 'Playfair Display', serif;
+    margin-bottom: 8px;
+}
+
+.name {
+    color: #e75480;
+    font: 43px 'Great Vibes', cursive;
+    margin-bottom: 20px;
+}
+
+.divider {
+    width: 75px;
+    height: 3px;
+    margin: 0 auto 23px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #f8bbd0, #e91e63, #f8bbd0);
+}
+
+.intro {
+    color: #754456;
+    font-size: 14px;
+    line-height: 1.9;
+    margin-bottom: 23px;
+}
+
+.intro strong {
+    color: #e75480;
+}
+
+/* NÚT MỞ THƯ - KHÔNG CẦN JAVASCRIPT */
+
+#letter-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.open-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 9px;
+    padding: 15px 26px;
+    border-radius: 30px;
+    color: white;
+    background: linear-gradient(135deg, #f38cad, #d94f7d);
+    box-shadow: 0 8px 22px #d94f7d40;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .25s, box-shadow .25s;
+}
+
+.open-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 13px 28px #d94f7d55;
+}
+
+.open-button:active {
+    transform: scale(.97);
+}
+
+.close-text {
+    display: none;
+}
+
+#letter-toggle:checked ~ .card .open-text {
+    display: none;
+}
+
+#letter-toggle:checked ~ .card .close-text {
+    display: inline;
+}
+
+/* BỨC THƯ */
+
+.letter-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    opacity: 0;
+    margin-top: 0;
+    transition:
+        grid-template-rows .7s ease,
+        opacity .5s ease,
+        margin .5s ease;
+}
+
+.letter-inner {
+    overflow: hidden;
+    min-height: 0;
+}
+
+#letter-toggle:checked ~ .card .letter-content {
+    grid-template-rows: 1fr;
+    opacity: 1;
+    margin-top: 30px;
+}
+
+.letter-box {
+    padding: 25px 20px;
+    border-radius: 20px;
+    border: 1px solid #f5ccda;
+    background: #fff8fbcc;
+}
+
+.letter-icon {
+    font-size: 27px;
+    margin-bottom: 12px;
+}
+
+.letter-title {
+    color: #c04470;
+    font: 29px 'Great Vibes', cursive;
+    margin-bottom: 17px;
+}
+
+.message {
+    color: #754456;
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 17px;
+}
+
+.wish {
+    color: #c04470;
+    font-size: 14px;
+    line-height: 2;
+    font-weight: 600;
+}
+
+.signature {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #f2cada;
+    color: #ad4774;
+    font-size: 13px;
+    line-height: 2;
+    font-style: italic;
+}
+
+.signature strong {
+    font-style: normal;
+    color: #c04470;
+}
+
+.footer {
+    margin-top: 24px;
+    color: #b16b85;
+    font-size: 11px;
+    letter-spacing: .5px;
+}
+
+.heart {
+    display: inline-block;
+    color: #e91e63;
+    animation: heartbeat 1s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.23); }
+}
+
+.open-button:focus-visible {
+    outline: 3px solid #b83262;
+    outline-offset: 4px;
+}
+
+#letter-toggle:focus-visible ~ .card .open-button {
+    outline: 3px solid #b83262;
+    outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 22px 13px;
+    }
+
+    .card {
+        padding: 30px 20px;
+        border-radius: 25px;
+    }
+
+    .decor {
+        font-size: 34px;
+    }
+
+    .name {
+        font-size: 38px;
+    }
+
+    .intro,
+    .message,
+    .wish {
+        font-size: 13px;
+    }
+
+    .letter-box {
+        padding: 22px 15px;
+    }
+
+    .open-button {
+        padding: 14px 21px;
+        font-size: 13px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="glow glow-one"></div>
+<div class="glow glow-two"></div>
+
+<div class="floating">🌸</div>
+<div class="floating">💗</div>
+<div class="floating">🌷</div>
+<div class="floating">💕</div>
+
+<input type="checkbox" id="letter-toggle">
+
+<main class="card">
+
+    <div class="top-label">A LITTLE GIFT · 20.10</div>
+
+    <div class="decor">💌</div>
+
+    <h1>Happy 20/10</h1>
+    <div class="name">Dear Ly ♡</div>
+
+    <div class="divider"></div>
+
+    <p class="intro">
+        Hôm nay là một ngày đặc biệt,<br>
+        nên có một món quà nho nhỏ dành riêng cho bạn đây! 🌷
+        <br>
+        Không biết có làm bạn bất ngờ không,
+        nhưng mong bạn sẽ thích nhé.
+    </p>
+
+    <label for="letter-toggle" class="open-button">
+        <span class="open-text">💌 Mở món quà nhỏ</span>
+        <span class="close-text">♡ Gấp lá thư lại</span>
+    </label>
+
+    <div class="letter-content">
+        <div class="letter-inner">
+            <div class="letter-box">
+
+                <div class="letter-icon">🌹</div>
+
+                <div class="letter-title">
+                    Gửi Ly một chút yêu thương
+                </div>
+
+                <p class="message">
+                    Chúc Ly có một ngày 20/10 thật vui vẻ nhé! 💗
+                    <br>
+                    Chúc bạn luôn xinh đẹp, rạng rỡ,
+                    làm gì cũng thuận lợi và gặp thật nhiều may mắn.
+                </p>
+
+                <p class="message">
+                    Mong những ngày bình thường của bạn
+                    cũng có thật nhiều niềm vui,
+                    những chuyện không vui sẽ nhanh chóng qua đi,
+                    và lúc nào cũng có lý do để mỉm cười.
+                </p>
+
+                <p class="wish">
+                    Mong những điều tốt đẹp nhất
+                    sẽ luôn đến với bạn.
+                    Buồn phiền thì ít, niềm vui thì nhiều,
+                    và mỗi ngày đều có lý do để mỉm cười.
+                    <span class="heart">♥</span>
+                </p>
+
+                <p class="message" style="margin-top: 18px;">
+                    Chúc cô gái tên Ly luôn được yêu thương,
+                    trân trọng và hạnh phúc theo cách riêng của mình. ✨
+                </p>
+
+                <div class="signature">
+                    Happy Women's Day, Ly! 🌷
+                    <br>
+                    <strong>Chúc bạn luôn vui vẻ nhé ♡</strong>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Made with a little care <span class="heart">♥</span> just for you
+    </div>
+
+</main>
+
+</body>
+</html>
